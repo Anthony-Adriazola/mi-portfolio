@@ -30,6 +30,16 @@ const TAGS = {
     class: "bg-[#a91d22] text-white",
     icon: null,
   },
+  RAZOR: {
+    name: "Razor / C#",
+    class: "bg-[#512bd4] text-white",
+    icon: null,
+  },
+  HTML: {
+    name: "HTML / CSS",
+    class: "bg-[#e34f26] text-white",
+    icon: null,
+  },
 }
 const PROJECTS: {
   title: string
@@ -40,11 +50,11 @@ const PROJECTS: {
   github?: string
 }[] = [
   {
-    title: "Sistema Institucional - Universidad Adventista de Bolivia",
+    title: "Calculadora de Redes",
     description:
-      "Desarrollo y mantenimiento de módulos del sistema institucional utilizando Angular y .NET. Implementación de funcionalidades frontend con TypeScript y Tailwind. Diseño y consumo de APIs REST. Gestión de versiones con Git y GitHub. Aplicación de principios de Clean Architecture.",
-    image: "projects/image.webp",
-    tags: [TAGS.ANGULAR, TAGS.DOTNET, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SQLSERVER],
+      "Calculadora de redes para subnetting y direccionamiento IP desarrollada con C# y Razor Pages. Permite calcular subredes, máscaras, direcciones de red, broadcast y rango de hosts. Interfaz responsive con HTML y CSS.",
+    tags: [TAGS.DOTNET, TAGS.RAZOR, TAGS.HTML],
+    link: "https://calculadora-redes-v7m3.onrender.com/",
   },
 ]
 ---
