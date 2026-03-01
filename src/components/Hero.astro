@@ -1,6 +1,5 @@
 ---
 import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import GitHubIcon from "@/components/icons/GitHub.astro"
 import SocialPill from "@/components/SocialPill.astro"
@@ -9,7 +8,9 @@ import SocialPill from "@/components/SocialPill.astro"
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <a
-      href="mailto:adriazolaanthony@gmail.com"
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=adriazolaanthony@gmail.com"
+      target="_blank"
+      rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
       <Badge>Disponible para trabajar</Badge>
@@ -28,17 +29,13 @@ import SocialPill from "@/components/SocialPill.astro"
     Experiencia en <strong>Angular, TypeScript, .NET y Clean Architecture</strong>.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:adriazolaanthony@gmail.com">
+    <SocialPill href="https://mail.google.com/mail/?view=cm&fs=1&to=adriazolaanthony@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
     </SocialPill>
-    <SocialPill href="https://github.com/">
+    <SocialPill href="https://github.com/Anthony-Adriazola">
       <GitHubIcon class="size-4" />
       GitHub
-    </SocialPill>
-    <SocialPill href="https://linkedin.com/in/">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
     </SocialPill>
   </nav>
 </div>
