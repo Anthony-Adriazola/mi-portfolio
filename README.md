@@ -1,6 +1,6 @@
 # 👨🏻‍💻 Portfolio - Anthony Adriazola
 
-Portfolio personal de Anthony Adriazola, estudiante de Ingeniería de Sistemas en la Universidad Adventista de Bolivia.
+Portfolio de Anthony Adriazola, estudiante de Ingeniería de Sistemas en la Universidad Adventista de Bolivia.
 
 <div align="center">
 
