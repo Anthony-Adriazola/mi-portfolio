@@ -17,7 +17,7 @@ const currentYear = new Date().getFullYear()
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
     >
       <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/#sobre-mi`} class="hover:underline me-4 md:me-6">Sobre mí</a>
       </li>
       <li>
         <a id="contacto" href="https://mail.google.com/mail/?view=cm&fs=1&to=adriazolaanthony@gmail.com" class="hover:underline"
