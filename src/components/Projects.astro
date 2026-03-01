@@ -1,39 +1,50 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#c3002f] text-white",
+    icon: null,
+  },
+  DOTNET: {
+    name: ".NET / C#",
+    class: "bg-[#512bd4] text-white",
+    icon: null,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#007acc] text-white",
+    icon: null,
   },
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}
-const PROJECTS = [
-  {
-    title: "SVGL - A beautiful library with SVG logos",
-    description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  SQLSERVER: {
+    name: "SQL Server",
+    class: "bg-[#a91d22] text-white",
+    icon: null,
   },
+}
+const PROJECTS: {
+  title: string
+  description: string
+  tags: { name: string; class: string; icon: any }[]
+  image?: string
+  link?: string
+  github?: string
+}[] = [
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Sistema Institucional - Universidad Adventista de Bolivia",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Desarrollo y mantenimiento de módulos del sistema institucional utilizando Angular y .NET. Implementación de funcionalidades frontend con TypeScript y Tailwind. Diseño y consumo de APIs REST. Gestión de versiones con Git y GitHub. Aplicación de principios de Clean Architecture.",
+    image: "/projects/image.png",
+    tags: [TAGS.ANGULAR, TAGS.DOTNET, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SQLSERVER],
   },
 ]
 ---
@@ -42,24 +53,26 @@ const PROJECTS = [
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  {image && (
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
+  )}
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
+  <div class={`w-full md:max-w-lg ${image ? "md:w-1/2" : ""}`}>
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
       {title}
     </h3>
     <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <ul class="flex flex-row flex-wrap mb-2 gap-2">
           {tags.map((tag) => (
             <li>
               <span
                 class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
               >
-                <tag.icon class="size-4" />
+                {tag.icon && <tag.icon class="size-4" />}
                 {tag.name}
               </span>
             </li>
@@ -72,7 +85,6 @@ const PROJECTS = [
             <LinkButton href={github}>
               <GitHub class="size-6" />
               Code
-              
             </LinkButton>
           )}
           {link && (
